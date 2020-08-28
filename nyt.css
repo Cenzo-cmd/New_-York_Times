@@ -1,0 +1,11 @@
+.card {
+    margin-bottom: 10px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-image: url(./images/download.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
