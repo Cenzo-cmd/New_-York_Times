@@ -57,8 +57,12 @@ function initializeSearch(newURL, numberOfEntries) {
             let divElBody = $("<div>").addClass("card-body card bg-light").attr("id", "article-" + i);
             let aEl = $("<a>").attr("href", responseItems[i].web_url).attr("target", "_blank").text(responseItems[i].web_url)
             divElBody.append("<h3>" + responseItems[i].headline.main);
-            divElBody.append("<h5>" + responseItems[i].byline.original);
-            divElBody.append("<h6>" + responseItems[i].news_desk);
+            if (responseItems[i].byline.original != null || responseItems[i].byline.original != undefined) {
+                divElBody.append("<h5>" + responseItems[i].byline.original);
+            }
+            if (responseItems[i].news_desk != undefined || responseItems[i].news_desk != null || responseItems[i].news_desk != "None") {
+                divElBody.append("<h6>" + responseItems[i].news_desk);
+            }
             divElBody.append("<h6>" + responseItems[i].lead_paragraph);
             divElBody.append("<h6>" + responseItems[i].pub_date);
             divElBody.append(aEl);
